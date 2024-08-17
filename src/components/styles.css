@@ -1,0 +1,62 @@
+
+/* Landing Page Styling */
+.landing-page-container {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #654321; /* Brown text color for consistency */
+    min-height: 100vh
+}
+
+.footer-section {
+    margin-top: auto; 
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Footer styling */
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
+    color: #F8F8FF; /* Ghost white text */
+}
+
+.footer-logo {
+    width: 50px;
+    height: 50px;
+}
+
+.home-logo-text {
+    width: 700px;
+}
+.home-logo {
+    width: 270px;
+    height: 250px;
+}
+
+.footer-button {
+    color: #654321; /* Ghost white text on buttons */
+    padding: 8px 16px; /* Adds padding for better touch */
+    font-weight: bold; /* Makes text bold */
+    font-size: 26px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.footer-button:hover {
+    background-color: #ff8457; /* Orange background on hover */
+    color: #654321; /* Brown text on hover */
+}
+
+/* Ensure links inside footer do not have underline and have a pointer cursor */
+.footer-button:link, .footer-button:visited {
+    cursor: pointer; /* Changes cursor to pointer */
+}

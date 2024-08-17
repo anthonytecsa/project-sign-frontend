@@ -31,8 +31,9 @@ body {
     width: 45px;
     height: 45px;
     padding: 10px;
-
 }
+
+
 
 .title {
     flex-grow: 1;
@@ -71,15 +72,17 @@ body {
 }
 
 #persona-box img {
-    width: 100px;
-    height: 100px;
+    width: 150;
+    height: 150px;
     display: flex;
     margin-top: 30px;
+    margin-bottom: 15px;
 }
 
 #persona-box h1 {
     margin: 0;
     font-size: 22px;
+    width: 50px;
     color: black;
     text-align: center;
 }
@@ -132,7 +135,7 @@ body {
 .message-container {
     display: flex;
     align-items: center;
-    margin: 5px 0;
+    margin: 5px 5px;
 }
 
 .message-content {
@@ -169,6 +172,6 @@ body {
 .typing-indicator {
     width: 25px;
     height: 25px;    
-    padding: 3px;
-    background-color: black;
+    margin-right: 7px;
+    margin-left: 9px;
 }

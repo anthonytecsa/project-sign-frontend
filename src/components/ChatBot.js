@@ -27,7 +27,7 @@ function ChatBot() {
 
             // api here
 
-            
+
             setTimeout(() => {
                 const aiResponse = { text: "Hi, I'm the AI responding", isUser: false };
                 setMessages(msgs => [...msgs, aiResponse]);
@@ -52,7 +52,7 @@ function ChatBot() {
         <div id="chat-container">
             <div id="chat-header">
                 <div className="logo">
-                    <img src='./images/bee_icon.webp' alt="Chatbot Logo"/>
+                    <img src='./images/persona-logo.png' alt="Chatbot Logo"/>
                 </div>
                 <div className="title">
                     <h1>My Chatbot Name</h1>
@@ -62,13 +62,13 @@ function ChatBot() {
             
             <div id="chat-box" ref={chatBoxRef}>
                 <div id="persona-box">
-                        <img src='./images/bee_icon.webp'></img>
-                        <h1>**insert persona name**</h1>
-                        <p>**insert persona description**</p>
+                        <img class="persona-character" src='./images/persona-character.png'></img>
+                        <h1>Foxy</h1>
+                        <p>Hi I'm Foxy! I can help you with any questions about sign-language and give you resources to learn more.</p>
                 </div>
                 {messages.map((msg, index) => (
                     <div key={index} className={`message-container ${msg.isUser ? 'message-user' : 'message-bot'}`}>
-                        {!msg.isUser && <img src='./images/bee_icon.webp' alt="AI Icon" className='ai-icon'/>}
+                        {!msg.isUser && <img src='./images/persona-logo.png' alt="AI Icon" className='ai-icon'/>}
                         <div className='message-content'>{msg.text}</div>
                     </div>
                 ))}

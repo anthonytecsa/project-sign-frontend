@@ -2,16 +2,34 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
+}
+
+.learn-page-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  width: 100%; /* Full width */
+  margin-bottom: 40px;
 }
 
 .learn-page-content {
   display: flex;
-  flex-direction: rpw;
-  justify-content: center; /* Centers content vertically in the available space */
-  align-items: center; /* Centers content horizontally */
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center; 
   width: 100%; /* Full width */
-  gap: 30px;
+  gap: 100px;
+}
 
+.instructions {
+  text-align: center;
+  width: 8asd00px;
+  padding: 10px;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px; /* Adds space between the instructions and the keyboard */
 }
 
 .keyboard-container {
@@ -36,6 +54,26 @@
   background-color: #ff5757; /* Highlight color for active key */
   transform: scale(1.1); /* Slightly enlarges the active key */
   font-weight: bold;
+}
+
+.toggle-typing {
+  width: 120px; /* Fixed width */
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  grid-column: span 2; 
+}
+
+.toggle-typing.enabled {
+  background-color: #4CAF50; /* Green background for enabled */
+  color: white; /* White text for better contrast */
+}
+
+.toggle-typing.disabled {
+  background-color: #f44336; /* Red background for disabled */
+  color: white; /* White text for consistency */
 }
 
 .sign-language-display {

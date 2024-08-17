@@ -1,7 +1,6 @@
 
 /* Landing Page Styling */
 .landing-page-container {
-    margin-top: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,10 +8,17 @@
     min-height: 100vh
 }
 
-.footer-section {
-    margin-top: auto; 
+.container-title {
+    text-align: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #FF4500;
+}
+
+.header-section {
+    margin-top: 20px;
+    margin-bottom: 100px;
     width: 100%;
-    margin-bottom: 70px;
 }
 
 .logo-container {
@@ -20,19 +26,31 @@
     flex-direction: row;
 }
 
-/* Footer styling */
-.footer-content {
+/* Header styling */
+.header-content {
+    margin: 0;
+    padding: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: row;
+    list-style-type: none;
     gap: 30px;
     color: #F8F8FF; /* Ghost white text */
 }
 
-.footer-logo {
+.header-logo {
+    margin-left: 20px;
+    justify-content: left;
     width: 50px;
     height: 50px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-right: 20px;
 }
 
 .home-logo-text {
@@ -43,7 +61,7 @@
     height: 250px;
 }
 
-.footer-button {
+.header-button {
     color: #654321; /* Ghost white text on buttons */
     padding: 8px 16px; /* Adds padding for better touch */
     font-weight: bold; /* Makes text bold */
@@ -51,12 +69,81 @@
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-.footer-button:hover {
+.header-button:hover {
     background-color: #ff8457; /* Orange background on hover */
     color: #654321; /* Brown text on hover */
 }
 
-/* Ensure links inside footer do not have underline and have a pointer cursor */
-.footer-button:link, .footer-button:visited {
+/* Ensure links inside header do not have underline and have a pointer cursor */
+.header-button:link, .header-button:visited {
     cursor: pointer; /* Changes cursor to pointer */
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.team-container {
+    text-align: center;
+}
+
+.person {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin: 25px;
+    margin-bottom: 5px;
+    margin-right: 40px;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.one {
+    background-image: url("/public/images/tecsa.jpeg");
+}
+
+.two {
+    background-image: url("/public/images/patrick.jpeg");
+}
+
+.three {
+    background-image: url("/public/images/krish.jpeg");
+}
+
+.four {
+    background-image: url("/public/images/kevin.jpeg");
+}
+
+.footer-container {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #654321; /* Brown border on top */
+}
+
+.about-container p {
+    margin: 20px;
+    font-size: 20px;
+}
+
+.team-names {
+    display: flex;
+    float: left;
+}
+
+.info {
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 100px;
 }

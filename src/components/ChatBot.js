@@ -24,21 +24,28 @@ function ChatBot() {
         setIsLoading(true);
 
         try {
+            const response = await fetch('https://project-sign-backend.onrender.com/chat', {
+                method: 'POST', 
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ prompt: inputValue }) 
+            });
 
-            // api here
-
-
-            setTimeout(() => {
-                const aiResponse = { text: "Hi, I'm the AI responding", isUser: false };
-                setMessages(msgs => [...msgs, aiResponse]);
-                setIsLoading(false);
-            }, 1000);
+            const data = await response.json(); 
+            console.log(data);
+    
+            const aiResponse = { text: data.response, isUser: false }; 
+            setMessages(msgs => [...msgs, aiResponse]);
         } catch (error) {
+            console.error('Error fetching data:', error);
             const errorMessage = { text: 'Error: Unable to get a response from the server.', isUser: false };
             setMessages(msgs => [...msgs, errorMessage]);
-            setIsLoading(false);
+        } finally {
+            setIsLoading(false); // Ensure loading is stopped regardless of the outcome
         }
     }
+    
 
     const handleInputChange = (e) => setInputValue(e.target.value);
 
@@ -62,7 +69,7 @@ function ChatBot() {
             
             <div id="chat-box" ref={chatBoxRef}>
                 <div id="persona-box">
-                        <img class="persona-character" alt="personacharacter" src='./images/persona-character.png'></img>
+                        <img className="persona-character" alt="personacharacter" src='./images/persona-character.png'></img>
                         <h1>Foxy</h1>
                         <p>Hi I'm Foxy! I can help you with any questions about sign-language and give you resources to learn more.</p>
                 </div>

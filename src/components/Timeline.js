@@ -37,7 +37,9 @@ function Timeline() {
 
     return (
         <Chrono 
-        items={items} 
+        items={items}
+        disableToolbar
+        mediaSettings={{align: 'right', fit: 'cover'}} 
         theme={{ primary: "#FF4500", secondary: "#F5F5DC", cardBgColor: "#F8F8FF", cardForeColor: "#000000", titleColor: "#654321", titleColorActive: "#FF4500" }}
         mode="HORIZONTAL" 
         slideShow

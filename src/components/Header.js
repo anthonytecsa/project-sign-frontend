@@ -9,7 +9,7 @@ const Header = () => {
             <div className="navbar">
                 <Link to="/" className="header-button">Home</Link>
                 <Link to="/learn" className="header-button">Learn</Link> 
-                <a className="header-button" href="">Test</a>
+                <Link to="/test" className="header-button">Test</Link> 
             </div>
         </header>
     );

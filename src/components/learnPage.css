@@ -1,43 +1,58 @@
 .learn-page {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 30px;
+  min-height: 100vh; /* Ensure the entire view height minus footer height */
+}
+
+.content-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .learn-page-description {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center; 
-  width: 100%; /* Full width */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   margin-bottom: 40px;
 }
 
 .learn-page-content {
   display: flex;
   flex-direction: row;
-  justify-content: center; 
-  align-items: center; 
-  width: 100%; /* Full width */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   gap: 100px;
+}
+
+.footer-container {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #654321;
 }
 
 .instructions {
   text-align: center;
-  width: 8asd00px;
+  width: 800px;
   padding: 10px;
   font-size: 14px;
   color: #666;
-  margin-bottom: 10px; /* Adds space between the instructions and the keyboard */
+  margin-bottom: 10px;
 }
+
+
 
 .keyboard-container {
   display: grid;
-  grid-template-columns: repeat(7, 1fr); /* 7 keys per row */
+  grid-template-columns: repeat(7, 1fr);
   gap: 10px;
   padding: 20px;
-  width: 100%; /* Full width to align with the page content */
+  width: 400px;
+  height: 260px;
+
 }
 
 .key {
@@ -51,29 +66,29 @@
 }
 
 .key.active {
-  background-color: #ff5757; /* Highlight color for active key */
-  transform: scale(1.1); /* Slightly enlarges the active key */
+  background-color: #ff5757;
+  transform: scale(1.1);
   font-weight: bold;
 }
 
 .toggle-typing {
-  width: 120px; /* Fixed width */
+  width: 120px;
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
   border: 1px solid #d0d0d0;
   border-radius: 5px;
-  grid-column: span 2; 
+  grid-column: span 2;
 }
 
 .toggle-typing.enabled {
-  background-color: #4CAF50; /* Green background for enabled */
-  color: white; /* White text for better contrast */
+  background-color: #4CAF50;
+  color: white;
 }
 
 .toggle-typing.disabled {
-  background-color: #f44336; /* Red background for disabled */
-  color: white; /* White text for consistency */
+  background-color: #f44336;
+  color: white;
 }
 
 .sign-language-display {
@@ -82,25 +97,19 @@
   justify-content: center;
   flex-direction: row;
   gap: 20px;
-  align-items: center; /* Ensures vertical centering of contents */
+  align-items: center;
 }
 
 .sign-language-display img {
-  width: 200px; /* Adjust width as necessary */
-  height: 200px; /* Adjust height as necessary */
-}
-
-.footer-section {
-  margin-top: auto; 
-  width: 100%;
-  margin-bottom: 50px;
+  width: 200px;
+  height: 200px;
 }
 
 .letter-display {
   font-size: 50px;
   font-weight: bold;
   color: #333;
-  display: flex; /* Ensures the letter can be aligned */
-  align-items: center; /* Center alignment for any child content */
-  justify-content: center; /* Horizontally center content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

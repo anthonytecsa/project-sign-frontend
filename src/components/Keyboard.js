@@ -21,7 +21,7 @@ function Keyboard() {
   }, [alphabet, typingEnabled]);
 
   return (
-    <div className="learn-page">
+    <div>
       <div className="sign-language-display">
         <div className="letter-display">{selectedLetter}</div>
         <img src={`/images/${selectedLetter}.svg`} alt={`Sign language for ${selectedLetter}`} />

@@ -3,8 +3,8 @@ import './styles.css';
 
 const Footer = () => {
   return (
-    <div className="footer-content">
-      <p class = "footer-text">Made with React.js, Tensorflow and Care</p>
+    <div className='footer-container'>
+      <p>Made with React.js, Tensorflow and Care</p>
     </div>
   );
 }

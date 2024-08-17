@@ -55,14 +55,14 @@ function ChatBot() {
                     <img src='./images/persona-logo.png' alt="Chatbot Logo"/>
                 </div>
                 <div className="title">
-                    <h1>My Chatbot Name</h1>
+                    <h1>Foxy the ASL Expert</h1>
                     <p>Online</p>            
                 </div>
             </div>
             
             <div id="chat-box" ref={chatBoxRef}>
                 <div id="persona-box">
-                        <img class="persona-character" src='./images/persona-character.png'></img>
+                        <img class="persona-character" alt="personacharacter" src='./images/persona-character.png'></img>
                         <h1>Foxy</h1>
                         <p>Hi I'm Foxy! I can help you with any questions about sign-language and give you resources to learn more.</p>
                 </div>

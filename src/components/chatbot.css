@@ -3,6 +3,7 @@ body {
 }
 
 #chat-container {
+    display: flex;
     width: 550px;
     height: 500px;
     display: flex;

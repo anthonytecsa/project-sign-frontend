@@ -52,9 +52,7 @@ function LandingPage() {
                 </div>
             </div>
 
-            <div class="footer-container">
-                <Footer />
-            </div>
+            <Footer />
         </div>
         
     );

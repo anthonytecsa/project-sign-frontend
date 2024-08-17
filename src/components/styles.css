@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     color: #654321; /* Brown text color for consistency */
-    min-height: 100vh
+    min-height: calc(100vh-150px);
 }
 
 .container-title {
@@ -16,8 +16,6 @@
 }
 
 .header-section {
-    margin-top: 20px;
-    margin-bottom: 100px;
     width: 100%;
 }
 
@@ -28,7 +26,6 @@
 
 /* Header styling */
 .header-content {
-    margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
@@ -37,6 +34,7 @@
     list-style-type: none;
     gap: 30px;
     color: #F8F8FF; /* Ghost white text */
+    height: 100px;
 }
 
 .header-logo {
@@ -121,11 +119,6 @@
     background-image: url("/public/images/kevin.jpeg");
 }
 
-.footer-container {
-    width: 100%;
-    text-align: center;
-    border-top: 1px solid #654321; /* Brown border on top */
-}
 
 .about-container p {
     margin: 20px;
@@ -146,4 +139,11 @@
     align-items: center;
     margin-left: 50px;
     margin-right: 100px;
+}
+
+.footer-container {
+    margin-top: 0; /* take available whitespace */
+    margin-bottom: -10px;      /* remove bottom whitespace */
+    padding-bottom: 5px;
+    height: 50px;            /* calc height when limited content */
 }

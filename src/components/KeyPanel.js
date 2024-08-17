@@ -1,8 +1,12 @@
 import React from 'react';
+import './learnPage.css'; 
 
-function Key({ letter, onSelectLetter }) {
+function Key({ letter, isActive, onSelectLetter }) {
   return (
-    <button onClick={() => onSelectLetter(letter)} className="key">
+    <button
+      onClick={onSelectLetter}
+      className={`key ${isActive ? 'active' : ''}`}
+    >
       {letter}
     </button>
   );

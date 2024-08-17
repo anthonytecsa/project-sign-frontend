@@ -1,24 +1,38 @@
-import React, { useState } from 'react';
-import Key from './Key';
-import './styles.css'; // Import your CSS for styling
+import React, { useState, useEffect } from 'react';
+import Key from './KeyPanel';
 
 function Keyboard() {
-  const [selectedLetter, setSelectedLetter] = useState('');
-
-  const handleSelectLetter = letter => {
-    setSelectedLetter(letter);
-    // Here you might want to fetch or change the sign language image based on the letter
-  };
-
+  const [selectedLetter, setSelectedLetter] = useState('A');
   const alphabet = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
 
+  // Effect to add and remove the keyboard event listener
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      const key = event.key.toUpperCase();
+      if (alphabet.includes(key)) {
+        setSelectedLetter(key);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [alphabet]);
+
   return (
-    <div className="keyboard-container">
-      {alphabet.map(letter => (
-        <Key key={letter} letter={letter} onSelectLetter={handleSelectLetter} />
-      ))}
+    <div className="learn-page">
       <div className="sign-language-display">
-        {selectedLetter && <img src={`/path/to/sign-language-images/${selectedLetter}.png`} alt={`Sign language for ${selectedLetter}`} />}
+        <div className="letter-display">{selectedLetter}</div>
+        <img src={`/images/${selectedLetter}.svg`} alt={`Sign language for ${selectedLetter}`} />
+      </div>
+      <div className="keyboard-container">
+        {alphabet.map((letter) => (
+          <Key
+            key={letter}
+            letter={letter}
+            isActive={selectedLetter === letter}
+            onSelectLetter={() => setSelectedLetter(letter)}
+          />
+        ))}
       </div>
     </div>
   );

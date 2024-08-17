@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#chat-container {
+    width: 550px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 8px;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+#chat-header {
+    width: 100%;
+    background-color: rgb(247, 58, 58);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 1001;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+
+}
+
+.title {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.title h1 {
+    margin: 0;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.title p {
+    margin: 0;
+    font-size: 12px;
+    color: #f6e0e0;
+}
+
+#chat-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ddd;
+    background-position: center;
+    background-size: 100%;
+}
+
+
+#persona-box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#persona-box img {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    margin-top: 30px;
+}
+
+#persona-box h1 {
+    margin: 0;
+    font-size: 22px;
+    color: black;
+    text-align: center;
+}
+
+#persona-box p{
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+}
+
+.input-container {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#chat-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid rgb(245, 96, 27);
+    box-sizing: border-box;
+}
+
+#send-button {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 35px;
+    border: none;
+    background-color: rgb(247, 58, 58);
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url("../../public/images/send-icon.png");
+    background-size: 100%;
+}
+
+#send-button:hover {
+    background-color: #923f00;
+}
+
+/* Style for messages */
+
+.message-container {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.message-content {
+    padding: 15px;
+    max-width: 75%;
+    word-wrap: break-word;
+}
+
+.message-user .message-content{
+    background-color: #2d1e1d;
+    color: white;
+    margin-left: auto;
+    margin-right: 10px;
+    border-radius: 20px 20px 0 20px;
+}
+
+.message-bot .message-content{
+    background-color: #f3dede;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: black;
+    align-self: flex-start;
+    border-radius: 20px 20px 20px 0;
+}
+
+.ai-icon {
+    width: 36px;
+    height: 36px;
+    align-self: flex-end;
+    margin-right: 7px;
+    margin-left: 5px;
+}
+
+
+.typing-indicator {
+    width: 25px;
+    height: 25px;    
+    padding: 3px;
+    background-color: black;
+}

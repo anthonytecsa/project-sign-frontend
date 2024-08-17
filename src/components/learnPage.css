@@ -1,0 +1,68 @@
+.learn-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.learn-page-content {
+  display: flex;
+  flex-direction: rpw;
+  justify-content: center; /* Centers content vertically in the available space */
+  align-items: center; /* Centers content horizontally */
+  width: 100%; /* Full width */
+  gap: 30px;
+
+}
+
+.keyboard-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 keys per row */
+  gap: 10px;
+  padding: 20px;
+  width: 100%; /* Full width to align with the page content */
+}
+
+.key {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.key.active {
+  background-color: #ff5757; /* Highlight color for active key */
+  transform: scale(1.1); /* Slightly enlarges the active key */
+  font-weight: bold;
+}
+
+.sign-language-display {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center; /* Ensures vertical centering of contents */
+}
+
+.sign-language-display img {
+  width: 200px; /* Adjust width as necessary */
+  height: 200px; /* Adjust height as necessary */
+}
+
+.footer-section {
+  margin-top: auto; 
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.letter-display {
+  font-size: 50px;
+  font-weight: bold;
+  color: #333;
+  display: flex; /* Ensures the letter can be aligned */
+  align-items: center; /* Center alignment for any child content */
+  justify-content: center; /* Horizontally center content */
+}

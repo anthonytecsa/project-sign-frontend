@@ -7,7 +7,7 @@ const useIntersectionObserver = (ref, options) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 } else {
-                    entry.tarlget.classList.remove('visible');
+                    entry.target.classList.remove('visible');
                 }
             });
         }, options);

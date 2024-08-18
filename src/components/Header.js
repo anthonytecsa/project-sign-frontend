@@ -11,7 +11,8 @@ const Header = () => {
             <div className="navbar">
                 <Link to="/" className="header-button">Home</Link>
                 <Link to="/learn" className="header-button">Learn</Link> 
-                <Link to="/test" className="header-button">Test</Link> 
+                {/* <Link to="/test" className="header-button">Test</Link>  */}
+                <a href="http://localhost:8501/" className="header-button" target="_blank" rel="noopener noreferrer">Test</a> 
             </div>
         </header>
     );

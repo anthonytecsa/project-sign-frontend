@@ -14,7 +14,7 @@ function LearnPage() {
         <div className="learn-page-description">
           <h1>Learn Sign Language</h1>
           <p>Welcome to the interactive sign language learning page. </p>
-          <p className="instructions">Click on a letter or press a kaey on your keyboard to see the sign language equivalent. Toggle typing to enable or disable keyboard interaction.
+          <p className="instructions">Click on a letter or press a key on your keyboard to see the sign language equivalent. Toggle typing to enable or disable keyboard interaction.
             Feel free to chat with Foxy to learn more about sign language!</p>
         </div>
         

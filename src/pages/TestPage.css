@@ -1,0 +1,6 @@
+.learn-page {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the entire view height minus footer height */
+  }

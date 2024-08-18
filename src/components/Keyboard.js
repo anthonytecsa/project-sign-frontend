@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Key from './KeyPanel';
 
 function Keyboard() {
-  const [selectedLetter, setSelectedLetter] = useState('A');
+  const [selectedLetter, setSelectedLetter] = useState('a');
   const [typingEnabled, setTypingEnabled] = useState(false);
-  const alphabet = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
+  const alphabet = Array.from({ length: 26 }, (_, i) => String.fromCharCode(97 + i));
 
   // Effect to add and remove the keyboard event listener
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (!typingEnabled) return; // Exit if typing is disabled
-      const key = event.key.toUpperCase();
+      const key = event.key.toLowerCase();
       if (alphabet.includes(key)) {
         setSelectedLetter(key);
       }

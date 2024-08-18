@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { marked } from 'https://cdn.jsdelivr.net/npm/marked@4.0.12/lib/marked.esm.js';
+
 import "./chatbot.css";
 
 function ChatBot() {
@@ -14,6 +16,22 @@ function ChatBot() {
             chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
         }
     }, [messages]);
+
+    // instantiate marked renderer
+    const renderer = new marked.Renderer();
+    renderer.image = () => ''; // Disable images
+    renderer.paragraph = (text) => text;
+    renderer.link = (href, title, text) => {
+        console.log('Link HREF:', href);
+        console.log('Link Title:', title);
+        console.log('Link Text:', text);
+        return `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+    };
+
+    marked.setOptions({
+        renderer,
+        pedantic: true
+    });
 
     async function sendMessage() {
         if (inputValue.trim() === '') return;
@@ -34,8 +52,8 @@ function ChatBot() {
 
             const data = await response.json(); 
             console.log(data);
-    
-            const aiResponse = { text: data.response, isUser: false }; 
+            const botMessage = marked.parse(data.response)
+            const aiResponse = { text: botMessage, isUser: false }; 
             setMessages(msgs => [...msgs, aiResponse]);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -76,8 +94,7 @@ function ChatBot() {
                 {messages.map((msg, index) => (
                     <div key={index} className={`message-container ${msg.isUser ? 'message-user' : 'message-bot'}`}>
                         {!msg.isUser && <img src='./images/persona-logo.png' alt="AI Icon" className='ai-icon'/>}
-                        <div className='message-content'>{msg.text}</div>
-                    </div>
+                        <div className='message-content' dangerouslySetInnerHTML={{ __html: msg.text }}></div></div>
                 ))}
                 {isLoading && <div className='message-container message-bot'>
                     <img src='./images/loading_transparent.gif' alt="Typing" className='typing-indicator'/>
